@@ -1,0 +1,141 @@
+#N canvas 0 25 1440 789 12;
+#X obj 760 287 f;
+#X obj 760 225 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 817 273 + 1;
+#X floatatom 849 226 5 0 0 0 - - -;
+#X floatatom 760 353 5 0 0 0 - - -;
+#X obj 641 679 makenote 64 250;
+#X obj 760 57 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 760 95 metro 500;
+#X floatatom 820 56 5 0 0 0 - - -;
+#X msg 865 19 250;
+#X msg 908 19 500;
+#X msg 820 19 125;
+#X obj 641 721 noteout 1;
+#X msg 641 625 60;
+#X msg 679 625 62;
+#X msg 720 625 64;
+#X msg 758 625 65;
+#X obj 760 140 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 760 478 select 0 1 2 3 4;
+#X obj 760 519 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 781 519 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 803 519 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 825 519 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 847 519 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 760 443 5 0 0 0 - - -;
+#X obj 221 171 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 1419 186 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 221 395 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 1419 410 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 221 563 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 1419 578 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 984 607 5 0 0 0 - - -;
+#N canvas 0 26 1440 788 decaysynth 0;
+#X obj 834 435 phasor~;
+#X obj 834 389 mtof;
+#X obj 993 540 *~;
+#X obj 1008 185 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 1031 185 trigger input;
+#X obj 889 145 inlet;
+#X obj 1204 153 inlet;
+#X obj 943 630 outlet~;
+#X obj 1076 495 line~;
+#X obj 1076 308 f;
+#X obj 1076 360 t f f;
+#X obj 1173 379 delay;
+#X msg 1076 431 1 \$1;
+#X obj 1173 432 f;
+#X floatatom 1204 283 5 0 0 0 - - -;
+#X msg 1173 455 0 \$1;
+#X floatatom 1094 281 5 0 0 0 - - -;
+#X text 1104 301 attack (ms);
+#X text 1213 302 decay (ms);
+#X msg 1094 252 10;
+#X obj 1094 220 loadbang;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X connect 2 0 7 0;
+#X connect 3 0 9 0;
+#X connect 5 0 1 0;
+#X connect 5 0 3 0;
+#X connect 6 0 14 0;
+#X connect 8 0 2 1;
+#X connect 9 0 10 0;
+#X connect 10 0 12 0;
+#X connect 10 1 11 0;
+#X connect 11 0 13 0;
+#X connect 12 0 8 0;
+#X connect 13 0 15 0;
+#X connect 14 0 13 1;
+#X connect 15 0 8 0;
+#X connect 16 0 9 1;
+#X connect 19 0 16 0;
+#X connect 20 0 19 0;
+#X restore 896 644 pd decaysynth;
+#X obj 896 706 *~ 0.1;
+#X floatatom 935 676 5 0 0 0 - - -;
+#X obj 896 744 dac~;
+#X obj 817 309 mod 5;
+#X text 385 79 A metronome \, with variable rate;
+#X text 388 276 The counter we made earlier;
+#X text 385 439 Use [select] to break out;
+#X text 385 461 individual steps. Think about the;
+#X text 385 483 maximum number of steps you might;
+#X text 385 506 want to use. In this example \, the max;
+#X text 385 529 number of steps you can use is 5;
+#X text 899 479 0-4 = 5 steps;
+#X text 293 634 Use [makenote] to make a MIDI-style;
+#X text 293 662 note-on/note-off pair \, then output the;
+#X text 809 684 or;
+#X text 293 688 MIDI note (e.g. to IAC Driver).;
+#X text 1017 667 Alternatively \, you could use this;
+#X text 1017 692 very simple synth \, with decay envelope;
+#X text 1015 718 (only) \, to produce some sound.;
+#X connect 0 0 2 0;
+#X connect 0 0 4 0;
+#X connect 1 0 0 0;
+#X connect 2 0 36 0;
+#X connect 3 0 36 1;
+#X connect 5 0 12 0;
+#X connect 5 1 12 1;
+#X connect 6 0 7 0;
+#X connect 7 0 17 0;
+#X connect 8 0 7 1;
+#X connect 9 0 8 0;
+#X connect 10 0 8 0;
+#X connect 11 0 8 0;
+#X connect 13 0 5 0;
+#X connect 14 0 5 0;
+#X connect 15 0 5 0;
+#X connect 16 0 5 0;
+#X connect 18 0 19 0;
+#X connect 18 1 20 0;
+#X connect 18 2 21 0;
+#X connect 18 3 22 0;
+#X connect 18 4 23 0;
+#X connect 24 0 18 0;
+#X connect 25 0 26 0;
+#X connect 27 0 28 0;
+#X connect 29 0 30 0;
+#X connect 31 0 32 1;
+#X connect 32 0 33 0;
+#X connect 33 0 35 0;
+#X connect 33 0 35 1;
+#X connect 34 0 33 1;
+#X connect 36 0 0 1;
