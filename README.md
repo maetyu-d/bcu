@@ -10,7 +10,7 @@ Pd patches are available above and slides are available [here]
 
 [I'm an inline-style link](https://www.google.com)
 
-[here](https://www.example.com(https://docs.google.com/presentation/d/1TbulIZmY_hHMmmi_lyGcpqFzDaOWq-DLuEv2Bbtzllo)
+[Available here](https://www.example.com(https://docs.google.com/presentation/d/1TbulIZmY_hHMmmi_lyGcpqFzDaOWq-DLuEv2Bbtzllo)
 
 
 
