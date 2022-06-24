@@ -4,7 +4,7 @@
 
 Though our lectures are 55 mins in duration, you should deliver for just 10-15 minutes of a lecture. You should finish your abridged lecture by giving indicative content of the remaining 40-45 minutes."
 
-Pd patches are available above and slides are available via Google Docs [here](https://docs.google.com/presentation/d/1TbulIZmY_hHMmmi_lyGcpqFzDaOWq-DLuEv2Bbtzllo) or above in PDF and pptx formats. Feel free to download a copy in a format of your choice.
+Pd patches are available above and slides are available via Google Docs [here](https://docs.google.com/presentation/d/1TbulIZmY_hHMmmi_lyGcpqFzDaOWq-DLuEv2Bbtzllo) or above in PDF and pptx formats. Download a copy in a format of your choice.
 
 
 
